@@ -1,0 +1,190 @@
+/* GLOBAL */
+
+:root {
+  --color-dark: #1f2124;
+  --color-dark-clean: #1a1b1d;
+  --color-green: #49aa26;
+  --light-green: #60b070;
+  --red-expense: #e92929;
+  --white: #fff;
+  --background: #26282b;
+  --color-blue: #2f53d0;
+  transition: 0.5s all ease;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 93.75%; /* 15px */
+  color: var(--white);
+}
+body {
+  background: var(--background);
+  transition: 0.5s all ease;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+/* KEYFRAMES */
+
+@keyframes animation {
+  from {
+    box-shadow: inset 1px 1px 5px var(--light-green),
+      0px -1px 5px var(--light-green);
+  }
+  to {
+    box-shadow: inset 2px 1px 20px var(--light-green),
+      0px -1px 40px var(--light-green);
+  }
+}
+
+@keyframes animationLink {
+  from {
+  }
+  to {
+    text-decoration: underline;
+  }
+}
+
+/* HEADER */
+.header-container {
+  display: flex;
+  height: auto;
+  width: 100%;
+  background: var(--color-dark);
+}
+.header-container nav {
+  width: 100%;
+  border-bottom: 2px solid var(--color-dark-clean);
+}
+.container {
+  width: min(90vw, 800px);
+  margin: auto;
+}
+
+.ul-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 3rem;
+  height: 8rem;
+}
+
+.ul-container li {
+  list-style: none;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+.ul-container li a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: bold;
+  position: relative;
+}
+
+.ul-container li a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--light-green);
+  transform: scale(0, 1);
+  left: 0;
+  bottom: 0;
+  transform-origin: 0% 100%;
+  transition: 0.5s all cubic-bezier(0.76, 0.08, 0.26, 0.82);
+}
+.ul-container li a:hover::after {
+  transform: scale(1, 1);
+}
+.ul-container li a:hover {
+  color: var(--light-green);
+  transition: 0.5s linear;
+}
+.img-container {
+  border: 5px solid var(--light-green);
+  display: grid;
+  border-radius: 50%;
+  height: auto;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  animation-name: animation;
+  animation-duration: 10s;
+  animation: 2.2s animation linear infinite alternate;
+}
+.img-container img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  padding: 0.8rem;
+}
+
+#wrapper {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+#wrapper h1 {
+  font-size: 2rem;
+  padding: 1.2rem 0;
+  color: var(--color-green);
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+}
+#wrapper h2 {
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
+}
+#wrapper p {
+  font-size: 1.2rem;
+  width: 90%;
+  font-weight: 100;
+  padding-bottom: 4rem;
+}
+#wrapper p a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 700;
+  position: relative;
+  color: var(--color-green);
+}
+#wrapper p a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--light-green);
+  left: 0;
+  bottom: 0;
+  transform: scale(0, 1);
+  transform-origin: 0% 100%;
+  transition: 0.5s all cubic-bezier(0.76, 0.08, 0.26, 0.82);
+}
+#wrapper p a:hover {
+  color: var(--light-green);
+  transition: 0.5s linear;
+}
+#wrapper p a:hover::after {
+  transform: scale(1, 1);
+}
+.hardskills-container h3 {
+  color: var(--color-green);
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 4rem;
+}
+
+.hardskills-container ul li{
+  list-style: none;
+}
