@@ -22,10 +22,11 @@ html {
 }
 body {
   background: var(--background);
-  transition: 0.5s all ease;
+  transition: 1s all ease;
   height: 100vh;
   font-family: "Inter", sans-serif;
   font-family: "Poppins", sans-serif;
+  
 }
 
 /* KEYFRAMES */
@@ -41,24 +42,37 @@ body {
   }
 }
 
-@keyframes animationLink {
-  from {
-  }
-  to {
-    text-decoration: underline;
-  }
+@keyframes progress-animation-html {
+  0% { width: 0%;}
+  100% { width: 100%;}
 }
-
+@keyframes progress-animation-css {
+  0% { width: 0%;}
+  100% { width: 90%;}
+}
+@keyframes progress-animation-js {
+  0% { width: 0%;}
+  100% { width: 45%;}
+}
+@keyframes progress-animation-bootstrap {
+  0% { width: 0%;}
+  100% { width: 75%;}
+}
+@keyframes progress-animation-vue {
+  0% { width: 0%;}
+  100% { width: 10%;}
+}
 /* HEADER */
 .header-container {
   display: flex;
-  height: auto;
+  height: 8rem;
+  z-index: 1;
   width: 100%;
   background: var(--color-dark);
 }
 .header-container nav {
   width: 100%;
-  border-bottom: 2px solid var(--color-dark-clean);
+  
 }
 .container {
   width: min(90vw, 800px);
@@ -72,12 +86,23 @@ body {
   width: 100%;
   gap: 3rem;
   height: 8rem;
+  background: var(--color-dark);
+  z-index: 2;
+  position: fixed;
+  box-shadow:
+  0 3.2px 4.1px rgba(0, 0, 0, 0.059),
+  0 8px 10.3px rgba(0, 0, 0, 0.084),
+  0 16.3px 20.9px rgba(0, 0, 0, 0.106),
+  0 33.6px 43.1px rgba(0, 0, 0, 0.131),
+  0 92px 118px rgba(0, 0, 0, 0.19)
+;
+
 }
 
 .ul-container li {
   list-style: none;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: 100%;
 }
 
 .ul-container li a {
@@ -85,6 +110,7 @@ body {
   color: var(--white);
   font-weight: bold;
   position: relative;
+  
 }
 
 .ul-container li a::after {
@@ -187,4 +213,109 @@ body {
 
 .hardskills-container ul li{
   list-style: none;
+  display: grid;
+  grid-template-columns: .1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.progress{
+  background: #eaeaea40;
+  height: 30px;
+  border-radius: 14px;
+  border: 2px solid var(--light-green);
+  width: 100%;
+  padding: 2px;
+  display: grid;
+  position: relative;
+  overflow:hidden;
+}
+
+.progress.html::before {
+  position: absolute;
+  content: '100%';
+  height: 100%;
+  left: 0;
+  width: 100%;
+  background: #F06529;
+  border-radius: 14px;
+  box-sizing: border-box;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  animation: progress-animation-html 4s;
+}
+.progress.css::before {
+  position: absolute;
+  content: '90%';
+  height: 100%;
+  left: 0;
+  width: 90%;
+  background: #2196F3;
+  border-radius: 14px;
+  box-sizing: border-box;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  animation: progress-animation-css 4s;
+}
+.progress.js::before {
+  position: absolute;
+  content: '45%';
+  height: 100%;
+  left: 0;
+  width: 45%;
+  background: #EFD81D;
+  border-radius: 14px;
+  box-sizing: border-box;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  animation: progress-animation-js 4s;
+}
+
+.progress.bootstrap::before {
+  position: absolute;
+  content: '75%';
+  height: 100%;
+  left: 0;
+  width: 75%;
+  background: #7952B3;
+  border-radius: 14px;
+  box-sizing: border-box;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  animation: progress-animation-bootstrap 4s;
+}
+.progress.vue::before {
+  position: absolute;
+  content: '10%';
+  height: 100%;
+  left: 0;
+  width: 10%;
+  background: #41B883;
+  border-radius: 14px;
+  box-sizing: border-box;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  animation: progress-animation-vue 4s;
+}
+.align{
+  display: grid;
+  width: 100%;
+  justify-content: center;
+}
+
+
+/* media queries */
+
+@media screen and (max-width:768px) {
+  .hardskills-container ul li{
+    grid-template-columns: 1fr;
+    
+  }
 }
